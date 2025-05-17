@@ -1,8 +1,13 @@
-<script type="text/javascript">
-    var fgAYa_oPX_YIojMc={"it":4444449,"key":"1c198"};
-</script>
-<script src="https://d29gqhzevia104.cloudfront.net/92449d8.js"></script>
-<script>_VE();</script>
-<script>setTimeout(_VE, 5000);</script>
-<button onclick="_VE()">Click me!</button>
-<button onclick="setTimeout(_VE, 5000);">Click me!</button>
+from telegram import Update
+from telegram.ext import Updater, CommandHandler, CallbackContext
+
+def start(update: Update, context: CallbackContext):
+    update.message.reply_text("play")
+
+def play(update: Update, context: CallbackContext):
+    update.message.reply_text("🚀 Level 1 | move: 300 | Earn: 2,043")
+
+updater = Updater("7404609087:AAFracyE45dInf84eaQDOd4kscY9aC7JuGE")) # 
+updater.dispatcher.add_handler(CommandHandler("start"))
+updater.dispatcher.add_handler(CommandHandler("play"))
+updater.start_polling()
